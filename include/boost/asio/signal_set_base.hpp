@@ -61,7 +61,9 @@ public:
   enum class flags : int
   {
     none = 0,
+#ifndef _QNX_
     restart = BOOST_ASIO_OS_DEF(SA_RESTART),
+#endif
     no_child_stop = BOOST_ASIO_OS_DEF(SA_NOCLDSTOP),
     no_child_wait = BOOST_ASIO_OS_DEF(SA_NOCLDWAIT),
     dont_care = -1
